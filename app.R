@@ -44,13 +44,13 @@ server <- function(input, output) {
                     "Percent Black" = "black",
                     "Percent Hispanic" = "darkorange",
                     "Percent Asian" = "darkviolet")
-    legendTitle <- switch(input$var,
+    legend <- switch(input$var,
                           "Percent White" = "% White",
                           "Percent Black" = "% Black",
                           "Percent Hispanic" = "% Hispanic",
                           "Percent Asian" = "% Asian")
     
-    percent_map(var = data, color = color, legend.title = legendTitle, input$range[1], input$range[2])
+    percent_map(data, color, legend, input$range[1], input$range[2])
   })
 }
 
